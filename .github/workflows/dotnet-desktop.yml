@@ -19,5 +19,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Build project
-      run: dotnet build ./cis2255_vetRegistration_cmoreland/cis2255_vetRegistration_cmoreland.csproj --configuration Release
+    - name: Build project 
+      run: dotnet build ./windowsProgramming_vetRegistration/cis2225_vetRegistration_cmoreland/vetRegistration/WindowsFormsApp1/cis2225_vetRegistration_cmoreland.csproj --configuration Release
+
