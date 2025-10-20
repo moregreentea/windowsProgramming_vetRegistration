@@ -61,5 +61,11 @@ namespace cis2255_vetRegistration_cmoreland
 
         public static List<Registration> allRegistrations = new List<Registration>();
 
+        public override string ToString()
+        {
+            return $"{Name} - {AnimalType} - {BirthDate} - {VisitReason} - {ContactNumber}";
+        }
+        
+
     }
 }

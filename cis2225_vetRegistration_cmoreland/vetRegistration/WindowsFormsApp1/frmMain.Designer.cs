@@ -38,11 +38,12 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbAnimalType = new System.Windows.Forms.ComboBox();
             this.cmbReason = new System.Windows.Forms.ComboBox();
-            this.cmbBirthDate = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtPetName = new System.Windows.Forms.TextBox();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.lstAppointments = new System.Windows.Forms.ListBox();
+            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPetName
@@ -101,12 +102,13 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(131, 227);
+            this.btnSubmit.Location = new System.Drawing.Point(15, 227);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbAnimalType
             // 
@@ -123,14 +125,6 @@
             this.cmbReason.Name = "cmbReason";
             this.cmbReason.Size = new System.Drawing.Size(121, 21);
             this.cmbReason.TabIndex = 8;
-            // 
-            // cmbBirthDate
-            // 
-            this.cmbBirthDate.FormattingEnabled = true;
-            this.cmbBirthDate.Location = new System.Drawing.Point(131, 110);
-            this.cmbBirthDate.Name = "cmbBirthDate";
-            this.cmbBirthDate.Size = new System.Drawing.Size(121, 21);
-            this.cmbBirthDate.TabIndex = 9;
             // 
             // contextMenuStrip1
             // 
@@ -159,15 +153,33 @@
             this.lstAppointments.Size = new System.Drawing.Size(259, 95);
             this.lstAppointments.TabIndex = 13;
             // 
+            // dtpBirth
+            // 
+            this.dtpBirth.Location = new System.Drawing.Point(131, 113);
+            this.dtpBirth.Name = "dtpBirth";
+            this.dtpBirth.Size = new System.Drawing.Size(121, 20);
+            this.dtpBirth.TabIndex = 14;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(177, 227);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 412);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.dtpBirth);
             this.Controls.Add(this.lstAppointments);
             this.Controls.Add(this.txtPhoneNum);
             this.Controls.Add(this.txtPetName);
-            this.Controls.Add(this.cmbBirthDate);
             this.Controls.Add(this.cmbReason);
             this.Controls.Add(this.cmbAnimalType);
             this.Controls.Add(this.btnSubmit);
@@ -179,6 +191,7 @@
             this.Controls.Add(this.lblPetName);
             this.Name = "frmMain";
             this.Text = "Vet Registration";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,11 +208,12 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbAnimalType;
         private System.Windows.Forms.ComboBox cmbReason;
-        private System.Windows.Forms.ComboBox cmbBirthDate;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox txtPetName;
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.ListBox lstAppointments;
+        private System.Windows.Forms.DateTimePicker dtpBirth;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
