@@ -1,0 +1,24 @@
+name: Build WinForms .NET Framework
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup MSBuild
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      # 3️⃣ Build the project
+      - name: Build WinForms project
+        run: msbuild ./cis2225_vetRegistration_cmoreland/vetRegistration/WindowsFormsApp1/cis2225_vetRegistration_cmoreland.csproj /p:Configuration=Release
