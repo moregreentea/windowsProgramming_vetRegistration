@@ -11,14 +11,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-    - name: Build project 
-      run: dotnet build ./windowsProgramming_vetRegistration/cis2225_vetRegistration_cmoreland/vetRegistration/WindowsFormsApp1/cis2225_vetRegistration_cmoreland.csproj --configuration Release
+      - name: Build WinForms project
+        run: msbuild ./cis2225_vetRegistration_cmoreland/vetRegistration/WindowsFormsApp1/cis2225_vetRegistration_cmoreland.csproj /p:Configuration=Release
 
+      # <-- Upload the EXE artifact AFTER the build
+      - name: Upload EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: VetRegistrationApp
+          path: ./cis2225_vetRegistration_cmoreland/vetRegistration/WindowsFormsApp1/bin/Release/WindowsFormsApp1.exe
